@@ -1,72 +1,87 @@
-# BioYogurt+: Sensor-Based Quality Optimization in Plant-Based Yogurt
+# BioYogurt+: Ingredient Optimization for Glycemic Control
 
 **Project Goal:**  
-To simulate and optimize the formulation of plant-based yogurt using a synthetic dataset, multivariate statistical analysis, and design of experiments (DoE). This project bridges food science, data science, and sensor analytics.
+To simulate and analyze how ingredient ratios in plant-based yogurt formulations affect product qualities like viscosity, taste, and glycemic index — using both Python (Jupyter) and KNIME Analytics Platform.
 
 ---
 
-## 💡 Problem Statement
+## 🧠 Background
 
-In the agri-food industry, optimizing product quality—like yogurt texture, pH, and taste—requires a deep understanding of how ingredient ratios influence key sensory and physical properties. This project simulates that process using synthetic sensor data to model, predict, and enhance product performance.
-
----
-
-## 🧪 Dataset
-
-The dataset includes 20 synthetic yogurt samples with the following variables:
-
-- `Starch_%` – Plant-based starch content (%)
-- `Protein_%` – Plant-based protein content (%)
-- `Probiotic_%` – Functional bacteria content (%)
-- `pH` – Final product acidity level
-- `Viscosity_Pa_s` – Simulated viscosity readings from sensor
-- `Taste_Score_10` – Simulated consumer sensory score (0–10)
-
-👉 [Download dataset](bioyogurt_plus_synthetic_dataset.csv)
+This project was inspired by New-Food Innovation’s case study on increasing starch resistance in legumes to reduce glycemic load. In a simulated R&D setting, we investigate how starch, protein, and probiotic content influence the health and sensory profile of a yogurt prototype.
 
 ---
 
-## ⚙️ Workflow Overview
+## 📊 Dataset
 
-1. **Data Loading & Exploration** – Preview and summarize trends
-2. **Design of Experiments (DoE)** – Generate formulation variations
-3. **PLSR Modeling** – Predict yogurt quality from ingredient inputs
-4. **Pareto Analysis** – Identify most influential factors
-5. **SQL (Optional)** – Query high-performing samples
-6. **Results Visualization** – Scatter plots, bar charts, prediction accuracy
-7. **Reflection & Learnings** – Summary of insights, limitations, future work
+The synthetic dataset includes 20 yogurt samples with:
 
----
+- `Starch_%` – Simulated legume-based starch content  
+- `Protein_%` – Plant protein source (e.g., pea, chickpea)  
+- `Probiotic_%` – Functional bacteria concentration  
+- `pH` – Final product acidity  
+- `Viscosity_Pa_s` – Simulated texture reading  
+- `Taste_Score_10` – Predicted consumer rating  
+- `Glycemic_Index` – Modeled using nutritional impact formulas
 
-## 🧰 Tools & Skills Used
-
-| Area             | Tools/Methods                          |
-|------------------|----------------------------------------|
-| Programming      | Python (Jupyter Notebook)              |
-| Data Wrangling   | pandas, numpy                          |
-| DoE              | pyDOE2, statsmodels                    |
-| Regression       | scikit-learn (PLSR, Linear Regression) |
-| Visualization    | matplotlib, seaborn                    |
-| SQL (Optional)   | sqlite3, pandasql                      |
-| Documentation    | Markdown, GitHub                       |
+📥 [Download the dataset](bioyogurt_nfi_gi_dataset.csv)
 
 ---
 
-## 🔍 Learning Outcomes
+## ⚙️ Tools Used
 
-- Applied DoE and PLSR to a simulated food-tech scenario
-- Explored multivariate relationships between formulation and output quality
-- Practiced scientific documentation and reproducibility using Jupyter and Git
-- Gained insight into how statistical models can drive product optimization in biotech and agri-food industries
+| Tool | Purpose |
+|------|---------|
+| **Python (Jupyter Notebook)** | Data preprocessing, regression modeling, coefficient analysis |
+| **scikit-learn** | Multivariate regression |
+| **Seaborn / Matplotlib** | Data visualization |
+| **KNIME Analytics Platform** | Visual workflow replication (File Reader, Regression, Correlation) |
+
+---
+
+## 📈 Workflow
+
+### In Python (Jupyter)
+1. Load and preview dataset  
+2. Visualize variable relationships  
+3. Train regression models for:
+   - Viscosity
+   - Taste Score
+   - Glycemic Index  
+4. Analyze coefficients to identify most influential ingredients  
+5. Visualize findings and summarize insights
+
+### In KNIME
+- File Reader → Correlation Matrix → Linear Regression Learner  
+- Quick visual interface for non-programmatic replication
+
+---
+
+## 🔬 Key Findings
+
+- **Protein** had a positive impact on **taste** and helped reduce **glycemic index**  
+- **Starch** improved **viscosity**, but increased **GI**  
+- **Probiotics** helped reduce **GI** and contributed to sensory scores
+
+---
+
+## 🧠 Reflection
+
+This project helped me explore how to simulate product optimization in a food science context. It also allowed me to bridge my skills in biomedical data analysis with agri-food innovation.
+
+I practiced:
+- Design of Experiments logic  
+- Multivariate regression  
+- Data storytelling  
+- Translating analysis between code-based (Jupyter) and visual (KNIME) tools
 
 ---
 
 ## 🚀 Future Work
 
-- Apply model to real-world open-source datasets (e.g., FAO or Kaggle food science data)
-- Integrate machine learning models for deeper insight (Random Forest, XGBoost)
-- Extend project with KNIME or JMP workflows for no-code version
-- Add real-time dashboard or UI with Plotly Dash or Streamlit
+- Expand dataset with real-world sensor data or open food composition data  
+- Try advanced models like Ridge/Lasso regression  
+- Explore taste prediction models using machine learning  
+- Deploy with a Streamlit or Dash UI for R&D demo
 
 ---
 
@@ -74,6 +89,5 @@ The dataset includes 20 synthetic yogurt samples with the following variables:
 
 **Sehba Samman**  
 Biomedical Engineering @ University of Calgary  
-🔗 [LinkedIn](https://www.linkedin.com/in/sehbasamman/)  
-📬 sehba.samman@ucalgary.ca  
-
+📧 sehba.samman@ucalgary.ca  
+🔗 [LinkedIn](https://www.linkedin.com/in/sehbasamman/)
